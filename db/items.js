@@ -28,7 +28,7 @@ module.exports = (sequelize, Sequelize) => {
             allowNull : false
         },
         pic : {
-            type: Sequelize.JSONB,
+            type: Sequelize.ARRAY(Sequelize.STRING),
             allowNull : false
         },
     }, {
