@@ -1,7 +1,5 @@
-const sequelize = require('sequelize')
-const Sequelize = require ('sequelize')
 
-module.exports = function (sequelize) {
+module.exports = (sequelize, Sequelize) => {
     return sequelize.define('items',{
         id : {
             type: Sequelize.INTEGER,
@@ -10,27 +8,27 @@ module.exports = function (sequelize) {
             allowNull : false
         },
         itemname : {
-            type: Sequelize.VARCHAR,
+            type: Sequelize.STRING,
             allowNull : false
         },
         category : {
-            type: Sequelize.VARCHAR,
+            type: Sequelize.STRING,
             allowNull : false
         },
         description1 : {
-            type: Sequelize.VARCHAR,
+            type: Sequelize.STRING(600),
             allowNull : false
         },
         description2 : {
-            type: Sequelize.VARCHAR,
+            type: Sequelize.STRING(600),
             allowNull : false
         },
         price : {
-            type: Sequelize.VARCHAR,
+            type: Sequelize.STRING,
             allowNull : false
         },
         pic : {
-            type: Sequelize.JSON,
+            type: Sequelize.JSONB,
             allowNull : false
         },
     }, {

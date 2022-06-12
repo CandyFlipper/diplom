@@ -1,13 +1,12 @@
 const Sequelize = require ('sequelize')
 
-const sequelize = new Sequelize('shop, 'postgresql', 'admin', {
+const sequelize = new Sequelize('shop', 'postgres', 'postgres', {
     dialect: "postgresql",
-    host: "localhost"
+    host: "89.108.98.228"
 })
+const db = {}
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+db.Items = require("./Items")(sequelize, Sequelize);
 
-const Items = require('./Items')(sequelize);
-
-module.exports = {
-    sequelize : sequelize,
-    items : Items
-}
+module.exports = db
