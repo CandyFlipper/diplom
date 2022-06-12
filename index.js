@@ -10,11 +10,35 @@ const db = require("./db");
 const bodyParser = require("body-parser");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
+app.set('view engine', 'ejs');
 // db.sequelize.sync({ force: true })
 
+app.use('/static', express.static('./static'))
+
 app.get('/', (req, res) => {
-    res.send('HELLO ZALUPA + GOVNOOOOO')
+    res.render('pages/index');
 })
+
+app.get('/catalog/:id', (req, res) => {
+    res.render('pages/catalog');
+})
+
+app.get('/catalog', (req, res) => {
+    res.render('pages/catalog');
+})
+
+app.get('/contacts', (req, res) => {
+    res.render('pages/contacts');
+})
+
+app.get('/about', (req, res) => {
+    res.render('pages/about');
+})
+
+app.get('/cart', (req, res) => {
+    res.render('pages/cart');
+})
+
 
 app.post('/additem', async (req, res) => {
     try {

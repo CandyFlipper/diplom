@@ -5,38 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Автозапчасти38</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body link="none" alink="none" vlink="none">
-    <header class="header">
-        <div class="header__logo">
-            <a href="index.html"><img src="img/logo.png" alt="" class="logo"></a>
-        </div>
-        <div class="header__nav">
-                <div class="container">
-                    <div class="nav__items">
-                        <div class="nav__item nav__item-red">
-                            <a href="catalog.html" class="nav__link">Каталог</a>
-                        </div>
-                        <div class="nav__item">
-                            <a href="about.html" class="nav__link">О нас</a>
-                        </div>
-                        <div class="nav__item">
-                            <a href="contacts.html" class="nav__link">Контакты</a>
-                        </div>
-                        <div class="nav__item">
-                            <a href="cart.html" class="nav__link">Корзина</a>
-                        </div>
-                        <div class="nav__item nav__item-search">
-                            <input type="search" name="search" id="" placeholder="Поиск...">
-                            <!--сделай тут кнопку поиска какую нибудь--> 
-                        </div>
-                    </div>
-                </div>
-        </div>
-    </header>
-    <section class="about">
+<%- include('../components/header'); %>
+
+<section class="about">
         <div class="container about__container flex flex-column flex-justify-between">
             <p class="about__title">
                 О нас:
@@ -62,28 +37,12 @@
                     <br>Мы всегда рады общению с нашими клиентами. Если у вас есть какие-либо пожелания, предложения, замечания, касающиеся работы нашего Интернет-магазина - пишите нам, и мы с благодарностью примем ваше мнение во внимание:
 
                         <br><br><b>Электронная почта:</b> avtozapchasty38@mail.ru
-                    
+
                 </div>
             </div>
         </div>
     </section>
-    <section class="bottom">
-        <div class="container bottom__container">
-            <div class="flex flex-justify-s">
-                <div class="bottom__nav flex flex-column flex-justify-s">
-                    <p class="bottom__navtitle">Навигация</p>
-                    <a href="catalog.html" class="bottom__link">Каталог</a>
-                    <a href="about.html" class="bottom__link">О нас</a>
-                    <a href="contacts.html" class="bottom__link">Контакты</a>
-                    <a href="cart.html" class="bottom__link">Корзина</a>
-                </div>
-                <div class="bottom__contacts flex flex-column flex-justify-s">
-                    <p class="bottom__navtitle">Контакты</p>
-                    <p class="bottom__contacts">ул. Сергеева, 3А</p>
-                    <p class="bottom__contacts">+79832493830</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<%- include('../components/footer'); %>
+
 </body>
 </html>
