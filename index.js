@@ -15,7 +15,7 @@ const smtpTransport = require('nodemailer-smtp-transport');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 app.set('view engine', 'ejs');
-// db.sequelize.sync({ force: true })
+//db.sequelize.sync({ force: true })
 
 app.use('/static', express.static('./static'))
 // странички
@@ -77,7 +77,7 @@ app.post('/additem', async (req, res) => {
         return res.send(itemCreated);
     } catch (e) {
         res.status(500).send({
-            message: e.message || "Произошла хуйня"
+            message: e.message || "eror"
         });
     }
 

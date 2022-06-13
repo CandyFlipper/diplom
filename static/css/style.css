@@ -343,6 +343,35 @@ body{
     border-radius: 30px;
     display: block;
 }
+.cart__item{
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 90%;
+    height: 250px;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+}
+.cart__itemimg-pic{
+    width: 300px;
+    margin-top: 15%;
+    margin-left: 5%;
+}
+.cart__itemtext{
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.cart__itemname{
+    font-size: 25px;
+}
+.cart__itemprice{
+    font-size: 25px;
+}
+.cart__buttonclose{
+    margin-left: 43%;
+    margin-top: 2%;
+}
+.cart__buttonclose-button{
+    background: #fff;
+ }
 .catalog__container{
     height: auto;
     min-height: 800px;
@@ -538,6 +567,41 @@ body{
 }
 .itemcard__buylink{
     display: block;
+}
+.form__title{
+    text-align: center;
+    font-weight: 300;
+    font-size: 40px;
+}
+.form__container{
+    height: auto;
+    min-height: 800px;
+    width: 30%;
+    background-color: #fff;
+    border-radius: 30px;
+    margin-top: 150px;
+}
+.form__inputs{
+    margin-left: auto;
+    margin-right: auto;
+    height: 90%;
+    width: 50%;
+}
+.form__input{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7%;
+    height: 5%;
+    width: 250px;
+    background-color: #fff;
+    font-size: 30px;
+}
+.form__button{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20%;
+    width: 250px;
+    font-size: 25px;
 }
 .bottom__nav{
     margin-right: 200px;
