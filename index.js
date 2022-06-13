@@ -46,7 +46,10 @@ app.get('/catalog/:id', async (req, res) => {
     });
 })
 
-
+app.get('/catalog/products', async (req, res) => {
+    const item = await ItemsService.getAll(options)
+    res.send(item)
+})
 
 app.get('/contacts', (req, res) => {
     res.render('pages/contacts');
