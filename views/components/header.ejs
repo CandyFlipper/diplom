@@ -1,6 +1,6 @@
 <header class="header">
     <div class="header__logo">
-        <a href="index.html"><img src="../../static/img/logo.png" alt="" class="logo"></a>
+        <a href="/"><img src="/static/img/logo.png" alt="" class="logo"></a>
     </div>
     <div class="header__nav">
         <div class="container">
@@ -18,7 +18,10 @@
                     <a href="/cart" class="nav__link">Корзина</a>
                 </div>
                 <div class="nav__item nav__item-search">
-                    <input type="search" name="search" id="" placeholder="Поиск...">
+                    <form action="/catalog">
+                        <input type="search" name="search" id="" placeholder="Поиск...">
+                        <button type="submit">Найти</button>
+                    </form>
                     <!--сделай тут кнопку поиска какую нибудь-->
                 </div>
             </div>

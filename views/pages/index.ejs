@@ -55,46 +55,18 @@
         <div class="container topitems__container">
             <p class="topitems__title">Самые популярные товары</p>
             <div class="topitems__items flex flex-row flex-justify-between">
-                <div class="topitems__item flex flex-column flex-justify-s">
-                    <img src="../../static/img/item.jpg" alt="" class="topitems__itemimg">
-                    <p class="topitems__itemtitle">Колодка</p>
+                <% items.forEach(function(item) { %>
+                    <div class="topitems__item flex flex-column flex-justify-s">
+                        <img src="<%= item.pic[0] %>" alt="" class="topitems__itemimg">
+                        <p class="topitems__itemtitle"><%= item.itemname %></p>
                         <div class="topitems__buttonandprice flex flex-justify-between flex-row">
                             <div class="topitems__itembutton">
-                                <a href="#" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
-                                </div>
-                                <p class="topitems__price">42069 руб.</p>
+                                <a href="/catalog/<%= item.id %>" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
+                            </div>
+                            <p class="topitems__price"><%= item.price %> руб.</p>
                         </div>
-                </div>
-                <div class="topitems__item flex flex-column flex-justify-s">
-                    <img src="../../static/img/item.jpg" alt="" class="topitems__itemimg">
-                    <p class="topitems__itemtitle">Колодка</p>
-                        <div class="topitems__buttonandprice flex flex-justify-between flex-row">
-                            <div class="topitems__itembutton">
-                                <a href="#" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
-                                </div>
-                                <p class="topitems__price">42069 руб.</p>
-                        </div>
-                </div>
-                <div class="topitems__item flex flex-column flex-justify-s">
-                    <img src="../../static/img/item.jpg" alt="" class="topitems__itemimg">
-                    <p class="topitems__itemtitle">Колодка</p>
-                        <div class="topitems__buttonandprice flex flex-justify-between flex-row">
-                            <div class="topitems__itembutton">
-                                <a href="#" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
-                                </div>
-                                <p class="topitems__price">42069 руб.</p>
-                        </div>
-                </div>
-                <div class="topitems__item flex flex-column flex-justify-s">
-                    <img src="../../static/img/item.jpg" alt="" class="topitems__itemimg">
-                    <p class="topitems__itemtitle">Колодка</p>
-                        <div class="topitems__buttonandprice flex flex-justify-between flex-row">
-                            <div class="topitems__itembutton">
-                                <a href="#" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
-                                </div>
-                                <p class="topitems__price">42069 руб.</p>
-                        </div>
-                </div>
+                    </div>
+                <% }); %>
             </div>
         </div>
     </section><!--

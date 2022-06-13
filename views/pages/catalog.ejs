@@ -39,16 +39,19 @@
                     </ul>
                 </div>
                 <div class="catalog__items flex flex-wrap flex-justify-s">
-                    <div class="catalog__item flex flex-column flex-justify-s">
-                        <a href="card.html" class="catalog__itemlink"><img src="static/img/item.jpg" alt="" class="catalog__itemimg"></a>
-                        <a href="card.html" class="catalog__itemlink"><p class="catalog__itemtitle">Колодка</p></a>
+                    <% items.forEach(function(item) { %>
+                        <div class="catalog__item flex flex-column flex-justify-s">
+                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><img src="<%= item.pic[0] %>" alt="" class="catalog__itemimg"></a>
+                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><p class="catalog__itemtitle"><%= item.itemname %></p></a>
                             <div class="catalog__buttonandprice flex flex-justify-between flex-row">
                                 <div class="catalog__itembutton">
                                     <a href="#" class="catalog__itemlink"><img src="static/img/cart.png" alt="" class="catalog__buttonimg"></a>
-                                    </div>
-                                    <p class="catalog__price">42069 руб.</p>
+                                </div>
+                                <p class="catalog__price"><%= item.price %> руб.</p>
                             </div>
-                    </div>
+                        </div>
+                    <% }); %>
+
 
             </div>
         </div>
