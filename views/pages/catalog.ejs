@@ -34,7 +34,7 @@
                             <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><p class="catalog__itemtitle"><%= item.itemname %></p></a>
                             <div class="catalog__buttonandprice flex flex-justify-between flex-row">
                                 <div class="catalog__itembutton">
-                                    <a href="#" class="catalog__itemlink"><img src="static/img/cart.png" alt="" class="catalog__buttonimg"></a>
+                                    <a href="#" class="catalog__itemlink" data-item="<%= JSON.stringify(item) %>"><img src="static/img/cart.png" alt="" class="catalog__buttonimg"></a>
                                 </div>
                                 <p class="catalog__price"><%= item.price %> руб.</p>
                             </div>
@@ -46,5 +46,19 @@
         </div>
     </section>
     <%- include('../components/footer'); %>
+
+    <script>
+        const cartAdd = document.querySelectorAll('.catalog__itemlink')
+        cartAdd.forEach(item => {
+            item.addEventListener('click', () => {
+                let localStorageItems = localStorage.getItem('cart')
+                if (localStorageItems) localStorageItems = JSON.parse(localStorageItems)
+                else localStorageItems = []
+                const itemFromTable = JSON.parse(item.getAttribute('data-item'))
+                localStorageItems.push(itemFromTable)
+                localStorage.setItem('cart', JSON.stringify(localStorageItems))
+            })
+        })
+    </script>
 </body>
 </html>

@@ -97,7 +97,7 @@ const transporter = nodemailer.createTransport(
 function sendEmail() {
     const mailOptions = {
         from: 'avtozpchty138@yandex.ru',
-        to: 'danila.aleksandrov.up@mail.ru\n',
+        to: 'danila.aleksandrov.up@mail.ru',
         subject: 'Заказ мафака',
         text: 'Соси хуй',
     };

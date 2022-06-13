@@ -16,30 +16,16 @@
                 Ваша корзина товаров:
             </p>
             <div class="cart__items">
-                <div class="cart__item flex flex-row">
-                    <div class="cart__itemimg">
-                        <img class="cart__itemimg-pic" src="../../static/img/item.jpg" alt="">
-                    </div>
-                    <div class="cart__itemtext flex flex-column">
-                        <div class="cart__itemname">
-                            Колодка
-                        </div>
-                        <div class="cart__itemprice">
-                            42069 руб.
-                        </div>
-                    </div>
-                    <div class="cart__buttonclose">
-                        <button class="cart__buttonclose-button">X</button>
-                    </div>
-                </div>
             </div>
             <div class="cart__bottom flex flex-row flex-justify-end">
-                <p class="cart__amount">Товаров в корзине: 0</p>
-                <p class="cart__price">Итог: 42069 руб.</p>
+                <p class="cart__amount">Товаров в корзине: <span>0</span></p>
+                <p class="cart__price">Итог: <span>0</span>руб.</p>
                 <div class="cart__button"><a href="#" class="cart__buttonlink">Заказать</a></div>
             </div>
         </div>
     </section>
     <%- include('../components/footer'); %>
+    <script type="application/javascript" src="/static/js/cart.js"></script>
+
 </body>
 </html>
