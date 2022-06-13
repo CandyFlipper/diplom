@@ -118,7 +118,7 @@ const transporter = nodemailer.createTransport(
 function sendEmail(mailItem) {
     const mailOptions = {
         from: 'avtozpchty138@yandex.ru',
-        to: 'avtozpchty38@yandex.ru',
+        to: 'avtozapchasty38@yandex.ru',
         subject: `Заказ ${mailItem.name}`,
         html: `<table>
         <thead>
