@@ -53,7 +53,7 @@ app.get('/catalog/:id', async (req, res) => {
 })
 
 app.get('/catalog/products', async (req, res) => {
-    const item = await ItemsService.getAll(options)
+    const item = await ItemsService.getAll()
     res.send(item)
 })
 

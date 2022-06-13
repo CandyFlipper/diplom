@@ -30,7 +30,7 @@
                 <div class="catalog__items flex flex-wrap flex-justify-s">
                     <% items.forEach(function(item) { %>
                         <div class="catalog__item flex flex-column flex-justify-s">
-                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><img src="<%= item.pic[0] %>" alt="" class="catalog__itemimg"></a>
+                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><img src="/static/<%= item.pic[0] %>" alt="" class="catalog__itemimg"></a>
                             <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><p class="catalog__itemtitle"><%= item.itemname %></p></a>
                             <div class="catalog__buttonandprice flex flex-justify-between flex-row">
                                 <div class="catalog__itembutton">
