@@ -13,20 +13,22 @@
     <section class="itemcard">
         <div class="container form__container flex flex-column">
             <p class="form__title">Ваши данные:</p>
-                <form action="" class="">
+                <form action="/orderform" enctype="multipart/form-data" class="jsForm">
                     <div class="form__inputs flex flex-wrap flex-justify-between">
-                            <input type="text" class="form__input" placeholder="Имя">
-                            <input type="text" class="form__input" placeholder="Фамилия">
-                            <input type="text" class="form__input" placeholder="Отчество">
-                            <input type="text" class="form__input" placeholder="Номер телефона">
-                            <input type="text" class="form__input" placeholder="Эл. почта">
-                            <input type="text" class="form__input" placeholder="Адрес">
+                            <input type="text" name="name" class="form__input" placeholder="Имя">
+                            <input type="text" name="fam" class="form__input" placeholder="Фамилия">
+                            <input type="text" name="father" class="form__input" placeholder="Отчество">
+                            <input type="text" name="tel" class="form__input" placeholder="Номер телефона">
+                            <input type="text" name="email" class="form__input" placeholder="Эл. почта">
+                            <input type="text" name="adress" class="form__input" placeholder="Адрес">
                             <input class="form__button" type="submit" name="" id="" value="Отправить">
                     </div>
                 </form>
         </div>
     </section>
     <%- include('../components/footer'); %>
+    <script>
 
+    </script>
 </body>
 </html>

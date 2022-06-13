@@ -7,6 +7,6 @@ const sequelize = new Sequelize('shop', 'postgres', 'postgres', {
 const db = {}
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
-db.Items = require("./Items")(sequelize, Sequelize);
+db.Items = require("./items")(sequelize, Sequelize);
 
 module.exports = db

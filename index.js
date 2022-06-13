@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 const express = require('express')
+var multiparty = require('multiparty');
 
 const PORT = process.env.PORT || 8080
 
@@ -43,6 +44,21 @@ app.get('/catalog', async (req, res) => {
     });
 })
 
+app.post('/orderform', async (req, res) => {
+    var form = new multiparty.Form();
+    console.log(form)
+    form.parse(req, function(err, fields, files) {
+       const mail = {
+           name: fields.name[0],
+           fam: fields.fam[0],
+           father: fields.father[0],
+           tel: fields.tel[0],
+           order: JSON.parse(fields.order[0])
+       }
+        sendEmail(mail)
+    });
+})
+
 app.get('/catalog/products', async (req, res) => {
     const item = await ItemsService.getAll()
     res.send(item)
@@ -55,6 +71,9 @@ app.get('/catalog/:id', async (req, res) => {
     });
 })
 
+app.get('/order', async (req, res) => {
+    res.render('pages/order');
+})
 
 
 app.get('/contacts', (req, res) => {
@@ -94,12 +113,49 @@ const transporter = nodemailer.createTransport(
     })
 );
 
-function sendEmail() {
+function sendEmail(mailItem) {
     const mailOptions = {
         from: 'avtozpchty138@yandex.ru',
         to: 'danila.aleksandrov.up@mail.ru',
-        subject: 'Заказ мафака',
-        text: 'Соси хуй',
+        subject: `Заказ ${mailItem.name}`,
+        html: `<table>
+        <thead>
+          <tr>
+            <th>Имя<br></th>
+            <th>${mailItem.name}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Фамилия</td>
+            <td>${mailItem.family}</td>
+          </tr>
+          <tr>
+            <td>Отчество</td>
+            <td>${mailItem.batya}</td>
+          </tr>
+          <tr>
+            <td>Номер телефона</td>
+            <td>${mailItem.tel}</td>
+          </tr>
+          <tr>
+            <td>Эл. почта</td>
+            <td>${mailItem.email}</td>
+          </tr>
+          <tr>
+            <td>Адрес</td>
+            <td>${mailItem.address}</td>
+          </tr>
+          <tr>
+            <td>Заказ</td>
+            <td>${(mailItem.order.map((item) => `${item.itemname} - ${item.price}руб`)).join(', ')}</td>
+          </tr>
+          <tr>
+            <td>Общая сумма заказа</td>
+            <td>${(mailItem.order.reduce((a, b) => +a.price + +b.price))} руб</td>
+          </tr>
+        </tbody>
+        </table>`,
     };
 
     transporter.sendMail(mailOptions, (err, info) => {
