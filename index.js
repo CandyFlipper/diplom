@@ -51,8 +51,10 @@ app.post('/orderform', async (req, res) => {
        const mail = {
            name: fields.name[0],
            fam: fields.fam[0],
-           father: fields.father[0],
+           batya: fields.father[0],
            tel: fields.tel[0],
+           email: fields.email[0],
+           adress: fields.adress[0],
            order: JSON.parse(fields.order[0])
        }
         sendEmail(mail)
@@ -116,7 +118,7 @@ const transporter = nodemailer.createTransport(
 function sendEmail(mailItem) {
     const mailOptions = {
         from: 'avtozpchty138@yandex.ru',
-        to: 'danila.aleksandrov.up@mail.ru',
+        to: 'avtozapchasty38@yandex.ru',
         subject: `Заказ ${mailItem.name}`,
         html: `<table>
         <thead>
@@ -128,7 +130,7 @@ function sendEmail(mailItem) {
         <tbody>
           <tr>
             <td>Фамилия</td>
-            <td>${mailItem.family}</td>
+            <td>${mailItem.fam}</td>
           </tr>
           <tr>
             <td>Отчество</td>
@@ -144,7 +146,7 @@ function sendEmail(mailItem) {
           </tr>
           <tr>
             <td>Адрес</td>
-            <td>${mailItem.address}</td>
+            <td>${mailItem.adress}</td>
           </tr>
           <tr>
             <td>Заказ</td>
