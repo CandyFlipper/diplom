@@ -28,9 +28,7 @@ app.get('/', async (req, res) => {
 app.get('/catalog', async (req, res) => {
     const options = req.query.category
     const search = req.query.search
-    console.log(options)
     const category = await ItemsService.getCategory()
-    console.log(category)
     let items = {}
     if (options) {
         items = await ItemsService.getByCategory(options)
@@ -45,6 +43,11 @@ app.get('/catalog', async (req, res) => {
     });
 })
 
+app.get('/catalog/products', async (req, res) => {
+    const item = await ItemsService.getAll()
+    res.send(item)
+})
+
 app.get('/catalog/:id', async (req, res) => {
     const item = await ItemsService.getById(req.params.id)
     res.render('pages/card', {
@@ -52,10 +55,7 @@ app.get('/catalog/:id', async (req, res) => {
     });
 })
 
-app.get('/catalog/products', async (req, res) => {
-    const item = await ItemsService.getAll()
-    res.send(item)
-})
+
 
 app.get('/contacts', (req, res) => {
     res.render('pages/contacts');
