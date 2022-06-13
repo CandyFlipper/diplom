@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автозапчасти38</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body link="none" alink="none" vlink="none">
+    <%- include('../components/header'); %>
+    <section class="catalog">
+        <div class="container catalog__container flex flex-column">
+            <p class="catalog__title">
+                Каталог товаров
+            </p>
+            <div class="catalog__whole flex flex-row flex-justify-between">
+                <div class="catalog__categories">
+                    <ul class="catalog__categories">
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Колодки</a></div>
+                        </li>
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Стойки амортизатора</a></div>
+                        </li>
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Тормозные диски</a></div>
+                        </li>
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Пружины подвески</a></div>
+                        </li>
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Рычаги подвески</a></div>
+                        </li>
+                        <li class="catalog__category">
+                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Приводы колёс</a></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="catalog__items flex flex-wrap flex-justify-s">
+                    <% items.forEach(function(item) { %>
+                        <div class="catalog__item flex flex-column flex-justify-s">
+                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><img src="<%= item.pic[0] %>" alt="" class="catalog__itemimg"></a>
+                            <a href="/catalog/<%= item.id %>" class="catalog__itemlink"><p class="catalog__itemtitle"><%= item.itemname %></p></a>
+                            <div class="catalog__buttonandprice flex flex-justify-between flex-row">
+                                <div class="catalog__itembutton">
+                                    <a href="#" class="catalog__itemlink"><img src="static/img/cart.png" alt="" class="catalog__buttonimg"></a>
+                                </div>
+                                <p class="catalog__price"><%= item.price %> руб.</p>
+                            </div>
+                        </div>
+                    <% }); %>
+
+
+            </div>
+        </div>
+    </section>
+    <%- include('../components/footer'); %>
+</body>
+</html>

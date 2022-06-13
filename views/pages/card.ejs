@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автозапчасти38</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body link="none" alink="none" vlink="none">
+    <%- include('../components/header'); %>
+    <section class="itemcard">
+        <div class="container itemcard__container flex flex-column flex-justify-between">
+            <div class="itemcard__textandimage flex">
+                <div class="itemcard__img">
+                    <img src="<%= item.pic[0] %>" alt="">
+                </div>
+                <div class="itemcard__text">
+                    <div class="itemcard__title">
+                        <p class="itemcard__title">
+                            <%= item.itemname %>
+                        </p>
+                    </div>
+                    <div class="itemcard__buttons flex flex-row flex-justify-between">
+                        <div class="itemcard__price"><%= item.price %> руб.</div>
+                        <div class="itemcard__buy"><a href="" class="itemacrd__buylink">В корзину</a></div>
+                    </div>
+                    <div class="itemcard__firstdescription">
+                        <%= item.description1 %>
+                    </div>
+                </div>
+            </div>
+            <div class="itemcard__seconddescription"><%= item.description2 %></div>
+        </div>
+    </section>
+    <%- include('../components/footer'); %>
+
+</body>
+</html>

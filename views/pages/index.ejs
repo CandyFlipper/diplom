@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автозапчасти38</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body link="none" alink="none" vlink="none">
+    <%- include('../components/header'); %>
+    <section class="welcomescreen">
+        <div class="container welcomescreen__container">
+            <div class="flex flex-column flex-justify-end">
+                <p class="welcomescreen__title">Лучшие автозапчасти</p>
+                <p class="welcomescreen__description">Для вашего автомобиля</p>
+            </div>
+        </div>
+    </section>
+    <section class="topcategories">
+        <div class="container topcategories__container">
+            <p class="topcategories__title">Самые популярные категории</p>
+            <div class="topcategories__items flex flex-row flex-justify-between">
+                <div class="topcategories__item flex flex-column flex-justify-s">
+                    <img src="../../static/img/item.jpg" alt="" class="topcategories__itemimg">
+                    <p class="topcategories__itemtitle">Колодки</p>
+                    <div class="topcategories__itembutton">
+                        <a href="#" class="topcategories__itemlink">Перейти</a>
+                    </div>
+                </div>
+                <div class="topcategories__item flex flex-column flex-justify-s">
+                    <img src="../../static/img/item.jpg" alt="" class="topcategories__itemimg">
+                    <p class="topcategories__itemtitle">Колодки</p>
+                    <div class="topcategories__itembutton">
+                        <a href="#" class="topcategories__itemlink">Перейти</a>
+                    </div>
+                </div>                <div class="topcategories__item flex flex-column flex-justify-s">
+                    <img src="../../static/img/item.jpg" alt="" class="topcategories__itemimg">
+                    <p class="topcategories__itemtitle">Колодки</p>
+                    <div class="topcategories__itembutton">
+                        <a href="#" class="topcategories__itemlink">Перейти</a>
+                    </div>
+                </div>                <div class="topcategories__item flex flex-column flex-justify-s">
+                    <img src="../../static/img/item.jpg" alt="" class="topcategories__itemimg">
+                    <p class="topcategories__itemtitle">Колодки</p>
+                    <div class="topcategories__itembutton">
+                        <a href="#" class="topcategories__itemlink">Перейти</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="topitems">
+        <div class="container topitems__container">
+            <p class="topitems__title">Самые популярные товары</p>
+            <div class="topitems__items flex flex-row flex-justify-between">
+                <% items.forEach(function(item) { %>
+                    <div class="topitems__item flex flex-column flex-justify-s">
+                        <img src="<%= item.pic[0] %>" alt="" class="topitems__itemimg">
+                        <p class="topitems__itemtitle"><%= item.itemname %></p>
+                        <div class="topitems__buttonandprice flex flex-justify-between flex-row">
+                            <div class="topitems__itembutton">
+                                <a href="/catalog/<%= item.id %>" class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
+                            </div>
+                            <p class="topitems__price"><%= item.price %> руб.</p>
+                        </div>
+                    </div>
+                <% }); %>
+            </div>
+        </div>
+    </section><!--
+    <section class="slider">
+        <div class="container slider__container">
+            <div class="slider__withbuttons flex flex-row flex-justify-between">
+                <div class="slider__button"></div>
+                <div class="slider__items flex flex-row flex-justify-between">
+                    <div class="slider__item">
+                        <a href="#" class="slider__link"><img src="img/tesla.png" alt="" class="slider__itemimg"></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href="#" class="slider__link"><img src="img/tesla.png" alt="" class="slider__itemimg"></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href="#" class="slider__link"><img src="img/tesla.png" alt="" class="slider__itemimg"></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href="#" class="slider__link"><img src="img/tesla.png" alt="" class="slider__itemimg"></a>
+                    </div>
+                    <div class="slider__item">
+                        <a href="#" class="slider__link"><img src="img/tesla.png" alt="" class="slider__itemimg"></a>
+                    </div>
+                </div>
+                <div class="slider__button"></div>
+            </div>
+        </div>
+    </section>-->
+    <%- include('../components/footer'); %>
+</body>
+</html>
