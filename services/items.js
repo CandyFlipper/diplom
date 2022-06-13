@@ -19,6 +19,12 @@ module.exports = class ItemsService {
             }
         })
     }
+    static getCategory() {
+        return db.Items.findAll({
+            attributes: ['category'],
+            group: ['category']
+        })
+    }
     static getByName (name) {
         return db.Items.findAll({
             where: {

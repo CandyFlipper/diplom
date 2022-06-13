@@ -18,24 +18,13 @@
             <div class="catalog__whole flex flex-row flex-justify-between">
                 <div class="catalog__categories">
                     <ul class="catalog__categories">
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Колодки</a></div>
-                        </li>
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Стойки амортизатора</a></div>
-                        </li>
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Тормозные диски</a></div>
-                        </li>
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Пружины подвески</a></div>
-                        </li>
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Рычаги подвески</a></div>
-                        </li>
-                        <li class="catalog__category">
-                            <div class="catalog__category"><a href="#" class="catalog__categorylink">Приводы колёс</a></div>
-                        </li>
+                        <% category.forEach(function(item) { %>
+                            <li class="catalog__category">
+                                <div class="catalog__category"><a href="/catalog?category=<%= item.category %>" class="catalog__categorylink">
+                                        <%= item.category %>
+                                    </a></div>
+                            </li>
+                        <% }); %>
                     </ul>
                 </div>
                 <div class="catalog__items flex flex-wrap flex-justify-s">
