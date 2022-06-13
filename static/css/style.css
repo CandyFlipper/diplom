@@ -352,15 +352,20 @@ body{
     width: 90%;
     height: 250px;
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    position: relative;
+}
+.cart__itemimg{
+    width: 30%;
 }
 .cart__itemimg-pic{
-    width: 300px;
-    margin-top: 15%;
-    margin-left: 5%;
+    width: 100%;
+    display: block;
 }
 .cart__itemtext{
-    margin-top: 5%;
-    margin-left: 5%;
+    padding-top: 5%;
+    padding-left: 5%;
+    width: 70%;
 }
 .cart__itemname{
     font-size: 25px;
@@ -369,7 +374,9 @@ body{
     font-size: 25px;
 }
 .cart__buttonclose{
-    margin-left: 43%;
+    position: absolute;
+    right: 5px;
+    top: 0;
     margin-top: 2%;
 }
 .cart__buttonclose-button{
