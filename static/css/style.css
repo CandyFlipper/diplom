@@ -89,13 +89,12 @@ body{
 .nav__item-search{
     padding: 0;
     width: 380px;
-    background-color: #fff;
-    border-radius: 30px;
 }
 .nav__item-search input{
     margin-left: 30px;
     display: block;
     height: 100%;
+    border-radius: 5000px;
     font-size: 25px;
     border: none;
 }
@@ -298,7 +297,7 @@ body{
 .cart__container{
     margin-top: 150px;
     width: 100%;
-    height: 800px;
+    min-height: 800px;
     background-color: #fff;
     border-radius: 30px;
 }
