@@ -118,7 +118,7 @@ function sendEmail(mailItem) {
         from: 'avtozpchty138@yandex.ru',
         to: 'danila.aleksandrov.up@mail.ru',
         subject: `Заказ ${mailItem.name}`,
-        text: `<table>
+        html: `<table>
         <thead>
           <tr>
             <th>Имя<br></th>
