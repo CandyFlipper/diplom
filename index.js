@@ -53,6 +53,7 @@ app.post('/orderform', async (req, res) => {
            fam: fields.fam[0],
            batya: fields.father[0],
            tel: fields.tel[0],
+           email: fields.email[0],
            adress: fields.adress[0],
            order: JSON.parse(fields.order[0])
        }
