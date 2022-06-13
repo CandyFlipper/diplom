@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автозапчасти38</title>
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body link="none" alink="none" vlink="none">
+<%- include('../components/header'); %>
+<section class="itemcard">
+    <iframe name="votar" style="display:none;"></iframe>
+    <div class="container form__container flex flex-column">
+        <p class="form__title">Ваши данные:</p>
+        <form action="/orderform" target="votar" enctype="multipart/form-data" method="post" class="jsForm">
+            <div class="form__inputs flex flex-wrap flex-justify-between">
+                <input type="text" name="name" class="form__input" placeholder="Имя">
+                <input type="text" name="fam" class="form__input" placeholder="Фамилия">
+                <input type="text" name="father" class="form__input" placeholder="Отчество">
+                <input type="text" name="tel" class="form__input" placeholder="Номер телефона">
+                <input type="text" name="email" class="form__input" placeholder="Эл. почта">
+                <input type="text" name="adress" class="form__input" placeholder="Адрес">
+                <input type="hidden" name="order" class="form__input formOrder" placeholder="Адрес">
+                <input class="form__button" type="submit" name="" id="" value="Отправить">
+            </div>
+        </form>
+    </div>
+</section>
+<%- include('../components/footer'); %>
+<script>
+    document.querySelector('.formOrder').setAttribute('value', localStorage.getItem('cart'))
+</script>
+</body>
+</html>
