@@ -24,7 +24,7 @@
                     </div>
                     <div class="itemcard__buttons flex flex-row flex-justify-between">
                         <div class="itemcard__price"><%= item.price %> руб.</div>
-                        <div class="itemcard__buy"><a href="" class="itemacrd__buylink">В корзину</a></div>
+                        <div class="itemcard__buy"><a href="#" data-item="<%= JSON.stringify(item) %>" class="itemacrd__buylink cartLink">В корзину</a></div>
                     </div>
                     <div class="itemcard__firstdescription">
                         <%= item.description1 %>
@@ -35,6 +35,17 @@
         </div>
     </section>
     <%- include('../components/footer'); %>
-
+    <script>
+        const cartAdd = document.querySelector('.cartLink')
+        cartAdd.addEventListener('click', (e) => {
+            e.preventDefault()
+            let localStorageItems = localStorage.getItem('cart')
+            if (localStorageItems) localStorageItems = JSON.parse(localStorageItems)
+            else localStorageItems = []
+            const itemFromTable = JSON.parse(cartAdd.getAttribute('data-item'))
+            localStorageItems.push(itemFromTable)
+            localStorage.setItem('cart', JSON.stringify(localStorageItems))
+        })
+    </script>
 </body>
 </html>
