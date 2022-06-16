@@ -59,6 +59,7 @@ app.post('/orderform', async (req, res) => {
        }
         sendEmail(mail)
     });
+    res.render('pages/success')
 })
 
 app.get('/catalog/products', async (req, res) => {
@@ -154,7 +155,7 @@ function sendEmail(mailItem) {
           </tr>
           <tr>
             <td>Общая сумма заказа</td>
-            <td>${(mailItem.order.reduce((a, b) => +a.price + +b.price))} руб</td>
+            <td>${(mailItem.order.map((a) => +a.price)).reduce((a, b) => a + b)} руб</td>
           </tr>
         </tbody>
         </table>`,
