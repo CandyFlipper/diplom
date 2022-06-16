@@ -58,10 +58,10 @@
                 <% items.forEach(function(item) { %>
                     <div class="topitems__item flex flex-column flex-justify-s">
                         <img src="/static/<%= item.pic[0] %>" alt="" class="topitems__itemimg">
-                        <a href="#"><p class="topitems__itemtitle"><%= item.itemname %></p></a>
+                        <a href="/catalog/<%= item.id %>"><p class="topitems__itemtitle"><%= item.itemname %></p></a>
                         <div class="topitems__buttonandprice flex flex-justify-between flex-row">
                             <div class="topitems__itembutton">
-                                <a class="topitems__itemlink"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
+                                <a href="#" class="topitems__itemlink cartLink" data-item="<%= JSON.stringify(item) %>"><img src="../../static/img/cart.png" alt="" class="topitems__buttonimg"></a>
                             </div>
                             <p class="topitems__price"><%= item.price %> руб.</p>
                         </div>
@@ -95,6 +95,20 @@
             </div>
         </div>
     </section>-->
+    <script>
+        const cartAdd = document.querySelectorAll('.cartLink')
+        cartAdd.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault()
+                let localStorageItems = localStorage.getItem('cart')
+                if (localStorageItems) localStorageItems = JSON.parse(localStorageItems)
+                else localStorageItems = []
+                const itemFromTable = JSON.parse(item.getAttribute('data-item'))
+                localStorageItems.push(itemFromTable)
+                localStorage.setItem('cart', JSON.stringify(localStorageItems))
+            })
+        })
+    </script>
     <%- include('../components/footer'); %>
 </body>
 </html>

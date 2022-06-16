@@ -11,10 +11,9 @@
 <body link="none" alink="none" vlink="none">
 <%- include('../components/header'); %>
 <section class="itemcard">
-    <iframe name="votar" style="display:none;"></iframe>
     <div class="container form__container flex flex-column">
         <p class="form__title">Ваши данные:</p>
-        <form action="/orderform" target="votar" enctype="multipart/form-data" method="post" class="jsForm">
+        <form action="/orderform" enctype="multipart/form-data" method="post" class="jsForm">
             <div class="form__inputs flex flex-wrap flex-justify-between">
                 <input type="text" name="name" class="form__input" placeholder="Имя">
                 <input type="text" name="fam" class="form__input" placeholder="Фамилия">
